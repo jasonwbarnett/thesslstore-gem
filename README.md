@@ -1,6 +1,6 @@
-# Thesslstore
+# TheSSLStore Gem
 
-TODO: Write a gem description
+This gem will one day work, but currently this is just a placeholder.
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+TODO
 
 ## Contributing
 
