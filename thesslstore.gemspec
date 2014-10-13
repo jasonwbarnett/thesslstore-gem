@@ -9,6 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jason Barnett"]
   spec.email         = ["J@sonBarnett.com"]
   spec.summary       = %q{thesslstore.com api wrapper in ruby}
+  spec.description   = %q{thesslstore.com is a SSL certificate vendor that has a somewhat modern API. This gem attempts to make those 
+                          interactions as simple as possible.}
   spec.homepage      = "https://github.com/jasonwbarnett/thesslstore-gem"
   spec.license       = "MIT"
 
