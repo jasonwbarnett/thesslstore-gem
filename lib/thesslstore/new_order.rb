@@ -13,7 +13,7 @@ module Thesslstore
     attribute :custom_order_id, String, :default => "OR%s" % Time.new.to_i
     attribute :product_code, String
     attribute :extra_product_codes, String
-    attribute :organisation_info, Thesslstore::OrganisationInfo, Thesslstore::OrganisationInfo.new
+    attribute :organisation_info, Thesslstore::OrganisationInfo, :default => Thesslstore::OrganisationInfo.new
     attribute :validity_period, Integer, :default => 12
     attribute :server_count, Integer, :default => 1
     attribute :csr, String
@@ -25,8 +25,8 @@ module Thesslstore
     attribute :special_instructions, String
     attribute :related_the_ssl_store_order_id
     attribute :is_trial_order, Boolean, :default => false
-    attribute :admin_contact, Thesslstore::AdminContact, Thesslstore::AdminContact.new
-    attribute :technical_contact, Thesslstore::TechnicalContact, Thesslstore::TechnicalContact.new
+    attribute :admin_contact, Thesslstore::AdminContact, :default => Thesslstore::AdminContact.new
+    attribute :technical_contact, Thesslstore::TechnicalContact, :default => Thesslstore::TechnicalContact.new
     attribute :approver_email, String
     attribute :reserve_san_count, Integer
     attribute :add_installation_support, Boolean

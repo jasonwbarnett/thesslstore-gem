@@ -13,6 +13,6 @@ module Thesslstore
     attribute :jurisdiction_city, String
     attribute :jurisdiction_region, String
     attribute :jurisdiction_country, String
-    attribute :organization_address, Thesslstore::OrganizationAddress, Thesslstore::OrganizationAddress.new
+    attribute :organization_address, Thesslstore::OrganizationAddress, :default => Thesslstore::OrganizationAddress.new
   end
 end
