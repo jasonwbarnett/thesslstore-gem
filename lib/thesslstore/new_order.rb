@@ -1,4 +1,5 @@
 require 'virtus'
+require 'active_support/json'
 require 'active_support/inflector'
 require 'thesslstore/auth_request'
 require 'thesslstore/admin_contact'
