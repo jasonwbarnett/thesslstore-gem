@@ -1,5 +1,8 @@
 require 'virtus'
 
+require 'active_support/json/encoding'
+require 'thesslstore/utils'
+
 module Thesslstore
   class Contact
     include Virtus.model
@@ -17,5 +20,10 @@ module Thesslstore
     attribute :region, String
     attribute :postal_code, String
     attribute :country, String
+
+    def as_json(options = nil)
+      camelized_json = Thesslstore::Utils.to_camel_case(attributes)
+    end
+
   end
 end

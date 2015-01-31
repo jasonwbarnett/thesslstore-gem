@@ -1,10 +1,11 @@
 require 'virtus'
-require 'active_support/json'
-require 'active_support/inflector'
 require 'thesslstore/auth_request'
 require 'thesslstore/admin_contact'
 require 'thesslstore/technical_contact'
 require 'thesslstore/organisation_info'
+
+require 'active_support/json/encoding'
+require 'thesslstore/utils'
 
 module Thesslstore
   class NewOrder
@@ -35,5 +36,10 @@ module Thesslstore
     attribute :file_auth_dv_indicator, Boolean
     attribute :cname_auth_dv_indicator, Boolean
     attribute :signature_hash_algorithm, String, :default => "SHA2-256"
+
+    def as_json(options = nil)
+      camelized_json = Thesslstore::Utils.to_camel_case(attributes)
+    end
+
   end
 end

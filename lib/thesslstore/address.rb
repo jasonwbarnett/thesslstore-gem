@@ -1,5 +1,8 @@
 require 'virtus'
 
+require 'active_support/json/encoding'
+require 'thesslstore/utils'
+
 module Thesslstore
   class Address
     include Virtus.model
@@ -14,5 +17,10 @@ module Thesslstore
     attribute :phone, String
     attribute :fax, String
     attribute :locality_name, String
+
+    def as_json(options = nil)
+      camelized_json = Thesslstore::Utils.to_camel_case(attributes)
+    end
+
   end
 end

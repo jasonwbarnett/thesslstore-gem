@@ -1,5 +1,8 @@
 require 'virtus'
 
+require 'active_support/json/encoding'
+require 'thesslstore/utils'
+
 module Thesslstore
   class AuthRequest
     include Virtus.model
@@ -12,5 +15,10 @@ module Thesslstore
     attribute :token_id, String
     attribute :token_code, String
     attribute :is_used_for_token_system, Boolean, :default => false
+
+    def as_json(options = nil)
+      camelized_json = Thesslstore::Utils.to_camel_case(attributes)
+    end
+
   end
 end
