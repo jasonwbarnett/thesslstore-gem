@@ -20,6 +20,8 @@ module Thesslstore
     end
 
     def new_order(options = {})
+      new_order = Thesslstore::NewOrder.new({auth_request: @auth_request})
+      return new_order
       product_code = options[:product_code]
       csr_path     = options[:csr_path]
       csr          = options[:csr]

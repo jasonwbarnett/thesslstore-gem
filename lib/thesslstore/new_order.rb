@@ -18,7 +18,7 @@ module Thesslstore
     attribute :organisation_info, Thesslstore::OrganisationInfo, :default => Thesslstore::OrganisationInfo.new
     attribute :validity_period, Integer, :default => 12
     attribute :server_count, Integer, :default => 1
-    attribute :csr, String
+    attribute :CSR, String
     attribute :domain_name, String
     attribute :web_server_type, String, :default => 'Other'
     attribute :dns_names, Array
@@ -31,8 +31,8 @@ module Thesslstore
     attribute :technical_contact, Thesslstore::TechnicalContact, :default => Thesslstore::TechnicalContact.new
     attribute :approver_email, String
     attribute :reserve_san_count, Integer
-    attribute :add_installation_support, Boolean
-    attribute :email_language_code, String
+    attribute :add_installation_support, Boolean, :default => false
+    attribute :email_language_code, String, :default => "EN"
     attribute :file_auth_dv_indicator, Boolean
     attribute :cname_auth_dv_indicator, Boolean
     attribute :signature_hash_algorithm, String, :default => "SHA2-256"
