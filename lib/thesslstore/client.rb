@@ -1,21 +1,21 @@
 require "httparty"
 require "thesslstore/new_order"
+require "thesslstore/auth_request"
 
 module Thesslstore
   class Client
     include HTTParty
     format :json
 
-    attr_reader :partner_code, :auth_token, :auth_request
-    attr_accessor :last_result
+    attr_reader :auth_request
 
     def initialize(options = {})
-      @partner_code = options[:partner_code] || Thesslstore.config[:partner_code] || fail("Missing required options: :partner_code")
-      @auth_token   = options[:auth_token]   || Thesslstore.config[:auth_token]   || fail("Missing required options: :auth_token")
-      @auth_request = {'AuthRequest' => {'PartnerCode' => @partner_code, 'AuthToken' => @auth_token}}
+      partner_code  = options[:partner_code] || Thesslstore.config[:partner_code] || fail("Missing required options: :partner_code")
+      auth_token    = options[:auth_token]   || Thesslstore.config[:auth_token]   || fail("Missing required options: :auth_token")
+      @auth_request = Thesslstore::AuthRequest.new({'partner_code' => partner_code, 'auth_token' => auth_token})
 
       self.class.base_uri('https://api.thesslstore.com/rest')
-      # Sets the headers for every response
+      # Sets the headers for every request
       self.class.headers({'Content-Type' => 'application/json; charset=utf-8', 'Accept' => 'application/json'})
     end
 
