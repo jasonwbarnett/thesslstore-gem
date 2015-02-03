@@ -25,19 +25,8 @@ module Thesslstore
     end
 
     def create_download(options = {})
-      new_order = Thesslstore::Order::Download.new({AuthRequest: @auth_request})
+      download = Thesslstore::Order::Download.new({AuthRequest: @auth_request})
     end
 
-    def base_order
-
-    end
-
-    def validate_order(order)
-    end
-
-    def csr_to_base64(csr_path)
-      require 'base64'
-      Base64.encode64(File.read(csr_path))
-    end
   end
 end
