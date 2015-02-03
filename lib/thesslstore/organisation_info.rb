@@ -14,5 +14,11 @@ module Thesslstore
     attribute :JurisdictionRegion, String
     attribute :JurisdictionCountry, String
     attribute :OrganizationAddress, Thesslstore::OrganizationAddress, :default => Thesslstore::OrganizationAddress.new
+
+    def as_json(opts = nil)
+      hash = super
+      hash.reject! { |k,v| v.nil?  }
+    end
+
   end
 end

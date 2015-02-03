@@ -18,5 +18,11 @@ module Thesslstore
     attribute :Region, String
     attribute :PostalCode, String
     attribute :Country, String
+
+    def as_json(opts = nil)
+      hash = super
+      hash.reject! { |k,v| v.nil?  }
+    end
+
   end
 end

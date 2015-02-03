@@ -15,5 +15,11 @@ module Thesslstore
     attribute :Phone, String
     attribute :Fax, String
     attribute :LocalityName, String
+
+    def as_json(opts = nil)
+      hash = super
+      hash.reject! { |k,v| v.nil?  }
+    end
+
   end
 end

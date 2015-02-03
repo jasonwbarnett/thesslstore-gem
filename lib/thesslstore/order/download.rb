@@ -17,6 +17,12 @@ module Thesslstore
       attribute :ApproverMethod, String
       attribute :DomainNames, String
       attribute :SerialNumber, String
+
+      def as_json(opts = nil)
+        hash = super
+        hash.reject! { |k,v| v.nil?  }
+      end
+
     end
   end
 end

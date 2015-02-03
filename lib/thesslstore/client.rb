@@ -1,6 +1,7 @@
 require "httparty"
 require "thesslstore/order/new_order"
 require "thesslstore/order/download"
+require "thesslstore/order/query"
 require "thesslstore/auth_request"
 
 module Thesslstore
@@ -26,6 +27,10 @@ module Thesslstore
 
     def create_download(options = {})
       download = Thesslstore::Order::Download.new({AuthRequest: @auth_request})
+    end
+
+    def create_query(options = {})
+      query = Thesslstore::Order::Query.new({AuthRequest: @auth_request})
     end
 
   end

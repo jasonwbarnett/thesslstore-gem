@@ -29,12 +29,25 @@ module Thesslstore
       attribute :AdminContact, Thesslstore::AdminContact, :default => Thesslstore::AdminContact.new
       attribute :TechnicalContact, Thesslstore::TechnicalContact, :default => Thesslstore::TechnicalContact.new
       attribute :ApproverEmail, String
-      attribute :ReserveSANCount, Integer
+      attribute :ReserveSANCount, Integer, :default => 0
       attribute :AddInstallationSupport, Boolean, :default => false
       attribute :EmailLanguageCode, String, :default => "EN"
       attribute :FileAuthDVIndicator, Boolean
       attribute :CNAMEAuthDVIndicator, Boolean
       attribute :SignatureHashAlgorithm, String, :default => "SHA2-256"
+
+
+      def as_json(opts = nil)
+        hash = super
+        hash.reject! do |k,v|
+          if Array === v
+            v.empty?
+          else
+            v.nil?
+          end
+        end
+      end
+
     end
   end
 end
