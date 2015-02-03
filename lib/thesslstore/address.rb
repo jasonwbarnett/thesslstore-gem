@@ -1,6 +1,5 @@
 require 'virtus'
 require 'active_support/json'
-require 'thesslstore/utils'
 
 module Thesslstore
   class Address

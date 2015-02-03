@@ -1,7 +1,5 @@
 require 'virtus'
-
-require 'active_support/json/encoding'
-require 'thesslstore/utils'
+require 'active_support/json'
 
 module Thesslstore
   class Contact
