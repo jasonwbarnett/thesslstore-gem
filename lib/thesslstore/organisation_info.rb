@@ -5,14 +5,14 @@ module Thesslstore
   class OrganisationInfo
     include Virtus.model
 
-    attribute :organization_name, String
-    attribute :duns, String
-    attribute :division, String
-    attribute :incorporating_agency, String
-    attribute :registration_number, String
-    attribute :jurisdiction_city, String
-    attribute :jurisdiction_region, String
-    attribute :jurisdiction_country, String
-    attribute :organization_address, Thesslstore::OrganizationAddress, :default => Thesslstore::OrganizationAddress.new
+    attribute :OrganizationName, String
+    attribute :DUNS, String
+    attribute :Division, String
+    attribute :IncorporatingAgency, String
+    attribute :RegistrationNumber, String
+    attribute :JurisdictionCity, String
+    attribute :JurisdictionRegion, String
+    attribute :JurisdictionCountry, String
+    attribute :OrganizationAddress, Thesslstore::OrganizationAddress, :default => Thesslstore::OrganizationAddress.new
   end
 end

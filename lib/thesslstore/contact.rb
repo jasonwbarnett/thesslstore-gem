@@ -7,23 +7,18 @@ module Thesslstore
   class Contact
     include Virtus.model
 
-    attribute :first_name, String
-    attribute :last_name, String
-    attribute :phone, String
-    attribute :fax, String
-    attribute :email, String
-    attribute :title, String
-    attribute :organization_name, String
-    attribute :address_line1, String
-    attribute :address_line2, String
-    attribute :city, String
-    attribute :region, String
-    attribute :postal_code, String
-    attribute :country, String
-
-    def as_json(options = nil)
-      camelized_json = Thesslstore::Utils.to_camel_case(attributes)
-    end
-
+    attribute :FirstName, String
+    attribute :LastName, String
+    attribute :Phone, String
+    attribute :Fax, String
+    attribute :Email, String
+    attribute :Title, String
+    attribute :OrganizationName, String
+    attribute :AddressLine1, String
+    attribute :AddressLine2, String
+    attribute :City, String
+    attribute :Region, String
+    attribute :PostalCode, String
+    attribute :Country, String
   end
 end
